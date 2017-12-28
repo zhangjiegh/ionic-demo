@@ -9,8 +9,8 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 
 
-import { HomeComponent }      from './page/home/home';
-import {ScannerComponent} from "./page/scanner/scanner";
+import { HomeComponent }      from './page/home/index';
+import {ScannerComponent} from "./page/scanner/index";
 
 @NgModule({
 	declarations: [

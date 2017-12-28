@@ -1,8 +1,8 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent }      from '../page/home/home';
-import {ScannerComponent} from "../page/scanner/scanner";
+import { HomeComponent }      from '../page/home/index';
+import {ScannerComponent} from "../page/scanner/index";
 
 const routes: Routes = [
 
