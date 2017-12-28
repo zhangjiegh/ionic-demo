@@ -9,3 +9,7 @@ Run `ionic serve`
 * Run `ionic cordova build android` to build 
 * Run `ionic cordova emulate android` to emulate  
 * Run `ionic cordova platform rm android` to delete
+
+##加载原生相关插件需要
+* ionic cordova plugin add '插件'
+* npm install -S '插件'
