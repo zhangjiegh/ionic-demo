@@ -54,6 +54,7 @@ export class ScannerComponent implements OnInit {
 	}
 	public dismiss(): void {
 		//this.viewCtrl.dismiss();
+
 	}
 	toggleLight() {
 		this.light = !this.light;
