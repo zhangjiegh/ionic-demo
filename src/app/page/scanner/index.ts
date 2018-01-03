@@ -1,7 +1,7 @@
 /**
  * Created by  on 2017/12/28.
  */
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import {ZBar, ZBarOptions} from "@ionic-native/zbar";
 
@@ -10,11 +10,11 @@ import {ZBar, ZBarOptions} from "@ionic-native/zbar";
 	templateUrl: 'index.html',
 })
 export class ScannerComponent implements OnInit {
-	protected light: boolean = false;
-	protected frontCamera: boolean = false;
 
-	constructor(
-		private zbar: ZBar) {}
+	private results: string
+
+	constructor(private zbar: ZBar) {
+	}
 
 	ngOnInit() {
 
@@ -22,32 +22,16 @@ export class ScannerComponent implements OnInit {
 			flash: 'off',
 			text_title: '扫码',
 			text_instructions: '请将二维码置于红线中央',
-			// camera: "front" || "back",
 			drawSight: true
 		};
 
 		this.zbar.scan(options)
 			.then(result => {
-				alert("结果：" + result); // Scanned code
+				console.log("结果：" + result); // Scanned code
 			})
 			.catch(error => {
-				alert(error); // Error message
+				console.log(error); // Error message
 			});
 	}
-	public dismiss(): void {
 
-	}
-	toggleLight() {
-
-	}
-	toggleCamera() {
-
-	}
-
-	ionViewWillEnter() {
-
-	}
-	ionViewWillLeave() {
-
-	}
 }
