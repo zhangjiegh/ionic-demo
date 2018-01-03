@@ -4,14 +4,12 @@ import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {MyApp} from './app.component';
 
 import { Camera } from '@ionic-native/camera';
-import {QRScanner, QRScannerStatus} from '@ionic-native/qr-scanner';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import {AppRoutingModule}     from './router/index';
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 
-import { ZBar, ZBarOptions } from '@ionic-native/zbar';
+import { ZBar } from '@ionic-native/zbar';
 import { HomeComponent }      from './page/home/index';
 import {ScannerComponent} from "./page/scanner/index";
 
@@ -33,8 +31,7 @@ import {ScannerComponent} from "./page/scanner/index";
 	providers: [
 		StatusBar,
 		SplashScreen,
-		QRScanner,Camera,ZBar,
-		BarcodeScanner,
+		Camera,ZBar,
 		{provide: ErrorHandler, useClass: IonicErrorHandler},
 	]
 })
