@@ -3,25 +3,15 @@ import {BrowserModule} from '@angular/platform-browser';
 import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {MyApp} from './app.component';
 
-import { Camera } from '@ionic-native/camera';
-
-
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 
+import { Camera } from '@ionic-native/camera';
 import { ZBar } from '@ionic-native/zbar';
-
-import {ScannerComponent} from "../page/scanner/index";
-import {WechatPayComponent} from "../page/wechatpay/index";
-import {HomeComponent} from "../page/home/index";
-
 
 @NgModule({
 	declarations: [
 		MyApp,
-		ScannerComponent,
-		WechatPayComponent,
-		HomeComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -30,9 +20,6 @@ import {HomeComponent} from "../page/home/index";
 	bootstrap: [IonicApp],
 	entryComponents: [
 		MyApp,
-		ScannerComponent,
-		WechatPayComponent,
-		HomeComponent,
 	],
 	providers: [
 		StatusBar,

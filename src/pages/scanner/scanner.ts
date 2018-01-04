@@ -1,16 +1,24 @@
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
- * Created by jie on 2017/12/28.
+ * Generated class for the ScannerPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
  */
+
 import {Component, OnInit} from '@angular/core';
 
 import {ZBar, ZBarOptions} from "@ionic-native/zbar";
 import {NavController} from "ionic-angular";
 
+@IonicPage()
 @Component({
-	selector: 'page-scan',
-	templateUrl: 'index.html',
+	selector: 'page-scanner',
+	templateUrl: 'scanner.html',
 })
-export class ScannerComponent implements OnInit {
+export class ScannerPage implements OnInit {
 
 	private results: string
 
