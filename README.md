@@ -29,3 +29,6 @@ cordova-plugin-cszbar
 ##真机调试 
 chrome://inspect/#devices
 `第一次需要翻墙要不会一直白屏`
+
+##生成懒加载文件
+ionic generate page xxx 生成时自动module.ts文件
