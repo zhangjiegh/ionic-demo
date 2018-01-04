@@ -4,29 +4,35 @@ import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {MyApp} from './app.component';
 
 import { Camera } from '@ionic-native/camera';
-import {AppRoutingModule}     from './router/index';
+
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 
 import { ZBar } from '@ionic-native/zbar';
-import { HomeComponent }      from './page/home/index';
-import {ScannerComponent} from "./page/scanner/index";
+
+import {ScannerComponent} from "../page/scanner/index";
+import {WechatPayComponent} from "../page/wechatpay/index";
+import {HomeComponent} from "../page/home/index";
+
 
 @NgModule({
 	declarations: [
 		MyApp,
+		ScannerComponent,
+		WechatPayComponent,
 		HomeComponent,
-		ScannerComponent
 	],
 	imports: [
 		BrowserModule,
 		IonicModule.forRoot(MyApp),
-		AppRoutingModule
 	],
 	bootstrap: [IonicApp],
 	entryComponents: [
 		MyApp,
+		ScannerComponent,
+		WechatPayComponent,
+		HomeComponent,
 	],
 	providers: [
 		StatusBar,

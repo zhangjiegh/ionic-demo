@@ -1,9 +1,10 @@
 /**
- * Created by  on 2017/12/28.
+ * Created by jie on 2017/12/28.
  */
 import {Component, OnInit} from '@angular/core';
 
 import {ZBar, ZBarOptions} from "@ionic-native/zbar";
+import {NavController} from "ionic-angular";
 
 @Component({
 	selector: 'page-scan',
@@ -13,7 +14,7 @@ export class ScannerComponent implements OnInit {
 
 	private results: string
 
-	constructor(private zbar: ZBar) {
+	constructor(public navCtrl: NavController,private zbar: ZBar) {
 	}
 
 	ngOnInit() {
@@ -28,9 +29,11 @@ export class ScannerComponent implements OnInit {
 		this.zbar.scan(options)
 			.then(result => {
 				console.log("结果：" + result); // Scanned code
+				this.results = result
 			})
 			.catch(error => {
 				console.log(error); // Error message
+				this.results = error
 			});
 	}
 

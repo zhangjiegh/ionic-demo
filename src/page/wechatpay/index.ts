@@ -3,12 +3,18 @@
  */
 
 import { Component,OnInit } from '@angular/core';
+import {NavController} from "ionic-angular";
 
 @Component({
-	selector: 'home',
+	selector: 'wechatpay',
 	templateUrl: './index.html',
 })
-export class HomeComponent implements OnInit{
+export class WechatPayComponent implements OnInit{
+
+	constructor(public navCtrl: NavController) {
+
+	}
+
 	ngOnInit(): void {
 	}
 }
