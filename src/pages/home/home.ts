@@ -19,8 +19,8 @@ export class HomePage {
 	constructor(public navCtrl: NavController) {
 		// used for an example of ngFor and navigation
 		this.pages = [
+			{title: '微信支付', component: 'WechatpayPage'},
 			{title: '扫码', component: 'ScannerPage'},
-			{title: '微信支付', component: 'WechatpayPage'}
 		];
 	}
 

@@ -1,6 +1,3 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
 /**
  * Generated class for the ScannerPage page.
  *
@@ -9,9 +6,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  */
 
 import {Component, OnInit} from '@angular/core';
-
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {ZBar, ZBarOptions} from "@ionic-native/zbar";
-import {NavController} from "ionic-angular";
 
 @IonicPage()
 @Component({
