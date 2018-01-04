@@ -21,7 +21,7 @@ Run `ionic serve`
 cordova-plugin-cszbar
 * ionic cordova plugin add cordova-plugin-cszbar
 * npm install -S cordova-plugin-cszbar<br>
-` 所有插件都需要对原生代码进行二次开发`
+` 需要对原生代码进行二次开发 qrscanner 可能黑屏`
 
 
 
