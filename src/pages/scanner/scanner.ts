@@ -6,7 +6,7 @@
  */
 
 import {Component, OnInit} from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 import {ZBar, ZBarOptions} from "@ionic-native/zbar";
 
 @IonicPage()
@@ -16,7 +16,7 @@ import {ZBar, ZBarOptions} from "@ionic-native/zbar";
 })
 export class ScannerPage implements OnInit {
 
-	private results: string
+	private results: string;
 
 	constructor(public navCtrl: NavController,private zbar: ZBar) {
 	}
