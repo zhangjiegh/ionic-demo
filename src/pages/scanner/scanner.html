@@ -9,10 +9,21 @@
 		<button ion-button menuToggle>
 			<ion-icon name="menu"></ion-icon>
 		</button>
-		<ion-title>二维码</ion-title>
+		<ion-title>扫描中……</ion-title>
 	</ion-navbar>
 </ion-header>
 
-<ion-content padding>
-	result:{{results }}
+
+<ion-content padding class="qrscanner">
+	<div class="qrscanner-area">
+	</div>
+	<div class="through-line"></div>
+	<div class="button-bottom">
+		<button (click)="toggleLight()" ion-fab class="icon-camera" margin-right>
+			<ion-icon name="flash"></ion-icon>
+		</button>
+		<button (click)="toggleCamera()" ion-fab class="icon-camera">
+			<ion-icon name="reverse-camera"></ion-icon>
+		</button>
+	</div>
 </ion-content>

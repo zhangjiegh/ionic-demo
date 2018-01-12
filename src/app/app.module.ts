@@ -7,7 +7,13 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 
 import { Camera } from '@ionic-native/camera';
-import { ZBar } from '@ionic-native/zbar';
+import { QRScanner } from '@ionic-native/qr-scanner';
+import { HTTP } from '@ionic-native/http';
+
+import {Config} from "../config/index";
+import {HttpService} from "../service/httpService";
+
+
 
 @NgModule({
 	declarations: [
@@ -24,7 +30,7 @@ import { ZBar } from '@ionic-native/zbar';
 	providers: [
 		StatusBar,
 		SplashScreen,
-		Camera,ZBar,
+		Camera,Config,QRScanner,HttpService,HTTP,
 		{provide: ErrorHandler, useClass: IonicErrorHandler},
 	]
 })

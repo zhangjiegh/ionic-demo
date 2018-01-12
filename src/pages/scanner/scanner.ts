@@ -1,3 +1,4 @@
+///<reference path="../../../node_modules/@angular/core/src/metadata/lifecycle_hooks.d.ts"/>
 /**
  * Generated class for the ScannerPage page.
  *
@@ -5,40 +6,66 @@
  * Ionic pages and navigation.
  */
 
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
-import {ZBar, ZBarOptions} from "@ionic-native/zbar";
+import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner';
 
 @IonicPage()
 @Component({
 	selector: 'page-scanner',
 	templateUrl: 'scanner.html',
 })
-export class ScannerPage implements OnInit {
+export class ScannerPage {
 
-	private results: string;
+	// private results: string;
 
-	constructor(public navCtrl: NavController,private zbar: ZBar) {
+	private frontCamera: boolean = false;
+	private light: boolean = false;
+
+	constructor(public navCtrl: NavController,private qrScanner: QRScanner) {
 	}
 
-	ngOnInit() {
+	ionViewDidLoad() {
+		this.qrScanner.prepare()
+			.then((status: QRScannerStatus) => {
 
-		let options: ZBarOptions = {
-			flash: 'off',
-			text_title: '扫码',
-			text_instructions: '请将二维码置于红线中央',
-			drawSight: true
-		};
+			console.log(JSON.stringify(status));
 
-		this.zbar.scan(options)
-			.then(result => {
-				console.log("结果：" + result); // Scanned code
-				this.results = result
+				if (status.authorized) {
+					let scanSub = this.qrScanner.scan().subscribe((text: string) => {
+						alert(text);
+						this.qrScanner.hide(); // hide camera preview
+						scanSub.unsubscribe(); // stop scanning
+					});
+					this.qrScanner.show();
+
+				} else if (status.denied) {
+				} else {
+				}
 			})
-			.catch(error => {
-				console.log(error); // Error message
-				this.results = error
+			.catch((e: any) => {
+				console.log('Error is123', e)
 			});
+	}
+
+
+	toggleLight() {
+		this.light = !this.light;
+		if (this.light) {
+			this.qrScanner.disableLight();
+		} else {
+			this.qrScanner.enableLight();
+
+		}
+	}
+
+	toggleCamera() {
+		this.frontCamera = !this.frontCamera;
+		if (this.frontCamera) {
+			this.qrScanner.useBackCamera();
+		} else {
+			this.qrScanner.useFrontCamera();
+		}
 	}
 
 }

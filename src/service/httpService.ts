@@ -3,30 +3,30 @@
  */
 import { HTTP } from '@ionic-native/http';
 import {Injectable} from "@angular/core";
+import {Config} from "../config/index";
 
-import {Config} from '../../config'
 
-//http https 默认选项
-const defaultOption = Config.http
 
 @Injectable()
 export class HttpService {
 
+	private defaultOption:any;
 	constructor(private http: HTTP,private config:Config) {
-		config.http
+		//http https 默认选项
+		this.defaultOption = config.http;
 	}
 
 	doGet(option,headers):Promise<any>{
 
 		let opt:any= {};
 		if(option == undefined || option == ""){
-			opt = defaultOption;
+			opt = this.defaultOption;
 		}else{
 			opt = option;
 		}
 
-		let port = defaultOption.port;
-		let host = defaultOption.host;
+		let port = this.defaultOption.port;
+		let host = this.defaultOption.host;
 		if(opt.port != undefined){
 			port = opt.port;
 		}
@@ -34,7 +34,7 @@ export class HttpService {
 			host = opt.host;
 		}
 
-		let httpType = defaultOption.httpType;
+		let httpType = this.defaultOption.httpType;
 		if(opt.httpType == "https"){
 			httpType = "https";
 		}
@@ -81,13 +81,13 @@ export class HttpService {
 
 		let opt:any = {};
 		if(option == undefined || option == ""){
-			opt = defaultOption;
+			opt = this.defaultOption;
 		}else{
 			opt = option;
 		}
 
-		let port = defaultOption.port;
-		let host = defaultOption.host;
+		let port = this.defaultOption.port;
+		let host = this.defaultOption.host;
 
 		if(opt.port != undefined){
 			port = opt.port;
@@ -98,7 +98,7 @@ export class HttpService {
 		}
 
 
-		let httpType = defaultOption.httpType;
+		let httpType = this.defaultOption.httpType;
 		if(opt.httpType == "https"){//https
 			httpType = "https";
 		}
