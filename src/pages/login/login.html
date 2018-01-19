@@ -15,11 +15,32 @@
 
 <ion-content padding>
 
-	result:{{result }}
 
-	<button (click)="login()" ion-button color="secondary" outline>登录</button>
+	<ion-list>
 
-	<button (click)="getReq()" ion-button color="secondary" outline>获取登录后数据</button>
+		<ion-item >
+			<ion-label floating>Username</ion-label>
+			<ion-input type="text" color="secondary" [(ngModel)]="account"></ion-input>
+		</ion-item>
 
-	<button (click)="getJob()" ion-button color="secondary" outline>获取登录后数据2</button>
+		<ion-item>
+			<ion-label floating>Password</ion-label>
+			<ion-input type="password" color="secondary" [(ngModel)]="password"></ion-input>
+		</ion-item>
+
+	</ion-list>
+
+
+	<div padding>
+		<button (click)="login()" ion-button color="secondary" outline style="width:100%;">登录</button>
+	</div>
+
+	<div>
+		result:{{result }}
+	</div>
+
+	<div padding>
+		<button (click)="getReq()" ion-button color="secondary" outline>获取登录后数据</button>
+	</div>
+
 </ion-content>

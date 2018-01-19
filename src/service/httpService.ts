@@ -66,13 +66,11 @@ export class HttpService {
 					let data:any = JSON.parse(res.data);
 					return resolve(data);
 				}
-
 			}).catch(error => {
 				console.log(error.status);
 				console.log(error.error); // error message as string
 				console.log(error.headers);
 				resolve({code:-1,mes:error})
-
 			})
 		});
 	}

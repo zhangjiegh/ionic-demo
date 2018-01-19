@@ -26,6 +26,10 @@ export class ScannerPage {
 	}
 
 	ionViewDidLoad() {
+		/*this.navCtrl.push('ScanResultPage',{
+			url:'123'
+		});*/
+
 		this.qrScanner.prepare()
 			.then((status: QRScannerStatus) => {
 
@@ -33,7 +37,12 @@ export class ScannerPage {
 
 				if (status.authorized) {
 					let scanSub = this.qrScanner.scan().subscribe((text: string) => {
-						alert(text);
+						// alert(text);
+
+						this.navCtrl.push('ScanResultPage',{
+							url:text
+						});
+
 						this.qrScanner.hide(); // hide camera preview
 						scanSub.unsubscribe(); // stop scanning
 					});

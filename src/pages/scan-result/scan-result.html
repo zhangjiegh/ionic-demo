@@ -6,13 +6,19 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>scanResult</ion-title>
-  </ion-navbar>
+	<ion-navbar>
+		<ion-content>
+			<button (click)="goBack()">
+				There's no place like home
+			</button>
+		</ion-content>
+
+		<ion-title>scanResult</ion-title>
+	</ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-结果 {{result}}
+	结果 {{result}}
 </ion-content>

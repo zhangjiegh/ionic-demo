@@ -20,6 +20,10 @@ import {HttpService} from "../../service/httpService";
 })
 export class LoginPage {
 
+	private account:string;
+
+	private password:string;
+
 	private sessionID:string;
 
 	private result:any;
@@ -30,12 +34,19 @@ export class LoginPage {
 		private config:Config,
 		private http:HttpService,
 	) {
+		this.account=this.config.user.account;
+		this.password=this.config.user.password;
+
 	}
 
 
 	async login() {
 
-		let body = this.config.user;
+		let body = {
+			account:this.account,
+			password:this.password
+		};
+
 		let restFulPotion = {
 			host: this.config.rest.host,
 			port: this.config.rest.port,
@@ -46,11 +57,26 @@ export class LoginPage {
 		let data:any= await this.http.doPost(restFulPotion);
 
 		this.result =JSON.stringify(data);
-		this.sessionID = data.sessionID;
+		if (data.code=='0'){
+			this.sessionID = data.sessionID;
+			window.localStorage.setItem('account',this.account);
+			window.localStorage.setItem('password',this.password);
+
+		}
 
 	}
 
 	async getReq() {
+
+		// TODO no test
+		var a =window.localStorage.getItem('account');
+		var b=window.localStorage.getItem('password');
+
+		console.log("====================");
+		console.log(a);
+		console.log(b);
+		console.log("====================");
+
 		let restFulPotion = {
 			host: this.config.rest.host,
 			port: this.config.rest.port,
