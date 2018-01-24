@@ -1,5 +1,7 @@
 /**
  * Created by jie on 2018/1/8.
+ *
+ * 使用原生
  */
 import { HTTP } from '@ionic-native/http';
 import {Injectable} from "@angular/core";
