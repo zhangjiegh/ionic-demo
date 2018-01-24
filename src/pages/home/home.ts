@@ -22,6 +22,7 @@ export class HomePage {
 			{title: '微信支付', component: 'WechatpayPage'},
 			{title: '扫码', component: 'ScannerPage'},
 			{title: '登录', component: 'LoginPage'},
+			{title: 'ajax', component: 'AjaxPage'},
 		];
 	}
 
