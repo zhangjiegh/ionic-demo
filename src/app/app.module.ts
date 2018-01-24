@@ -9,7 +9,6 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import { Camera } from '@ionic-native/camera';
 import { QRScanner } from '@ionic-native/qr-scanner';
 import { HTTP } from '@ionic-native/http';
-
 import {Config} from "../config/index";
 
 import {HttpClientModule} from '@angular/common/http';

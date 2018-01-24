@@ -1,45 +1,41 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 import {Config} from "../../config/index";
-import {HttpService} from "../../service/httpService";
-
-
+import {HttpService2} from "../../service/httpService2";
 
 /**
- * Generated class for the LoginPage page.
+ * Generated class for the AjaxPage page.
  *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
+ *
+ *
  */
 
 @IonicPage()
 @Component({
-	selector: 'page-login',
-	templateUrl: 'login.html',
-	providers:[]
+  selector: 'page-ajax',
+  templateUrl: 'ajax.html',
 })
-export class LoginPage {
-
+export class AjaxPage {
 	private account:string;
-
 	private password:string;
-
 	private sessionID:string;
-
 	private result:any;
 
 	constructor(
 		public navCtrl: NavController,
 		public navParams: NavParams,
 		private config:Config,
-		private http:HttpService,
+		private http:HttpService2,
+		// private headers:HttpHeaders
 	) {
 		this.account=this.config.user.account;
 		this.password=this.config.user.password;
 
 	}
-
-
+	ionViewDidLoad() {
+		console.log('ionViewDidLoad AjaxPage');
+	}
 	async login() {
 
 		let body = {
@@ -55,7 +51,6 @@ export class LoginPage {
 		};
 
 		let data:any= await this.http.doPost(restFulPotion);
-
 		this.result =JSON.stringify(data);
 		if (data.code=='0'){
 			this.sessionID = data.sessionID;
@@ -63,28 +58,22 @@ export class LoginPage {
 			window.localStorage.setItem('password',this.password);
 
 		}
-
 	}
-
 	async getReq() {
 
+		// TODO no test
 		var a =window.localStorage.getItem('account');
 		var b=window.localStorage.getItem('password');
-		console.log(a);
-		console.log(b);
 
 		let restFulPotion = {
 			host: this.config.rest.host,
 			port: this.config.rest.port,
-			path: this.config.rest.devicePage,
+			path: this.config.rest.devicePage+'?sessionid='+this.sessionID,
 		};
 
-		let headers:any={
-			sessionID:this.sessionID
-		};
+		let data:any = await this.http.doGet(restFulPotion);
 
-		let data:any = await this.http.doGet(restFulPotion,headers);
+
 		this.result =JSON.stringify(data);
 	}
-
 }
