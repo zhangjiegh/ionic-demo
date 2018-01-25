@@ -21,8 +21,8 @@ export class HomePage {
 		this.pages = [
 			{title: '微信支付', component: 'WechatpayPage'},
 			{title: '扫码', component: 'ScannerPage'},
-			{title: '登录', component: 'LoginPage'},
-			{title: 'ajax', component: 'AjaxPage'},
+			{title: '通过native层解决session', component: 'LoginPage'},
+			{title: '通过url解决session', component: 'AjaxPage'},
 		];
 	}
 
