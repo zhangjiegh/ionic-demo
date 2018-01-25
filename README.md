@@ -32,11 +32,12 @@ Run `ionic serve`
 
 * https://github.com/xu-li/cordova-plugin-wechat
 
-##登录
+## 登录
 	ionic cordova plugin add cordova-plugin-advanced-http
 	npm install --save @ionic-native/http
 
 # 其他
+
 ## 真机调试 
 * `adb devices` 查看手机是否真正连接
 
