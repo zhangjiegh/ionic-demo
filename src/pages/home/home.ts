@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController} from 'ionic-angular';
+import {TreeViewPage} from "../tree-view/tree-view";
 
 /**
  * Generated class for the HomePage page.
@@ -23,6 +24,7 @@ export class HomePage {
 			{title: '扫码', component: 'ScannerPage'},
 			{title: '通过native层解决session', component: 'LoginPage'},
 			{title: '通过url解决session', component: 'AjaxPage'},
+			{title: 'treeView', component: 'TreeViewPage'},
 		];
 	}
 

@@ -48,3 +48,12 @@ Run `ionic serve`
 
 * ionic2自定义插件与插件的调用
 `https://www.jianshu.com/p/e151a3c2f652`
+
+## 网络sessin解决方案
+* 查看 page login 通过原生解决
+* 查看 page ajax 通过url解决 
+
+
+
+
+
