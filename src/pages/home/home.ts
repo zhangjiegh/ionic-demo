@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController} from 'ionic-angular';
-import {TreeViewPage} from "../tree-view/tree-view";
 
 /**
  * Generated class for the HomePage page.
