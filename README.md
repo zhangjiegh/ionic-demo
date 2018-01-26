@@ -53,7 +53,7 @@ Run `ionic serve`
 * 查看 page login 通过原生解决
 * 查看 page ajax 通过url解决 
 
-## treeView解决方案
+## treeView实现方法
 * 查看 page tree-view
 
 
