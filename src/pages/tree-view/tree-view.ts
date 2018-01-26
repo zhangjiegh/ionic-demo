@@ -2,7 +2,6 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import {TreeData} from './treeData'
-import {ItemView} from "./item-view";
 
 /**
  * Generated class for the TreeViewPage page.
@@ -17,7 +16,6 @@ import {ItemView} from "./item-view";
 	templateUrl: 'tree-view.html',
 })
 export class TreeViewPage implements OnInit{
-	@ViewChild(ItemView) itewView :ItemView;
 
 	private treeData= TreeData;
 
@@ -26,7 +24,7 @@ export class TreeViewPage implements OnInit{
 	}
 
 	ngOnInit(): void {
-		console.log(this.treeData)
+		// console.log(this.treeData)
 	}
 
 }
