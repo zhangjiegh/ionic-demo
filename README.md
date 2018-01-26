@@ -52,7 +52,7 @@ Run `ionic serve`
 ## 网络sessin解决方案
 * 查看 page login 通过原生解决
 * 查看 page ajax 通过url解决 
-* 部分说明查看 http://mp.blog.csdn.net/mdeditor/index/79173965 
+* 部分说明查看 http://blog.csdn.net/skwo12345/article/details/79173965
 
 ## treeView实现方法
 * 查看 page tree-view
