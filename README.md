@@ -1,7 +1,7 @@
 
 # Ionic Demo
 ## www
-Run `ionic serve` 
+PC端运行 `ionic serve` 
 
 ## android
 * Run `ionic cordova platform add android` to add
